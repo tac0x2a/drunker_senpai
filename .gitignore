@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+DrunkSenpai.csv
+DrunkSenpai.png
+DrunkSenpai_last.json
