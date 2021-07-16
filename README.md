@@ -23,5 +23,5 @@ Visualize(WIP)
 $ python ./senpai_visualize.py
 ```
 
-It will export as image. But it's not work well...
-(Please fix and send pull request!!)
+![](./DrunkSenpai.png)
+

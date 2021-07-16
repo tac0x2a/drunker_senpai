@@ -35,7 +35,7 @@ for tweet in tweets:
   (date_r, amount_r, today_r, total_r) = tweet.text.splitlines()
   drunk = {
     'id': tweet.id,
-    'date': re.search(r'\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}', date_r).group(),
+    'date': re.search(r'\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}', date_r).group().replace('/', '-'),
     'amount_ml': float(re.search(r'\d+\.\d+', amount_r).group()),
     'today_ml':  float(re.search(r'\d+\.\d+', amount_r).group()),
     'total': "" #  re.search(r'\d+\.\d+', total_r).group() # it seems is not implemented ?
