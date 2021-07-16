@@ -23,5 +23,5 @@ Visualize(WIP)
 $ python ./senpai_visualize.py
 ```
 
-![](./DrunkSenpai.png)
+![](/DrunkSenpai.png)
 
