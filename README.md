@@ -18,10 +18,10 @@ It export tweet data into `DrunkSenpai.csv`.
 This script will get tweets since last id stored `DrunkSenpai_last.json`.
 
 
-Visualize(WIP)
+Visualize
 ```
 $ python ./senpai_visualize.py
 ```
-
+Image will be exported as `DrunkSenpai.png`.
 ![](./DrunkSenpai_example.png)
 
