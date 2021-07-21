@@ -21,6 +21,12 @@ TARGET_ACCOUNT = "DrunkTozan"
 LAST_TWEET_FILE = "./DrunkSenpai_last.json"
 CSV_FILE_NAME = "./DrunkSenpai.csv"
 
+def none_or_float(str):
+  try:
+    return float(re.search(r'\d+\.\d+', str).group())
+  except:
+    return None
+
 try:
   with open(LAST_TWEET_FILE) as f:
     since_id = json.load(f)['id']
@@ -36,14 +42,15 @@ for tweet in tweets:
   drunk = {
     'id': tweet.id,
     'date': re.search(r'\d{4}/\d{2}/\d{2} \d{2}:\d{2}:\d{2}', date_r).group().replace('/', '-'),
-    'amount_ml': float(re.search(r'\d+\.\d+', amount_r).group()),
-    'today_ml':  float(re.search(r'\d+\.\d+', amount_r).group()),
-    'total': "" #  re.search(r'\d+\.\d+', total_r).group() # it seems is not implemented ?
+    'amount_ml': none_or_float(amount_r),
+    'today_ml':  none_or_float(today_r),
+    'total':     none_or_float(total_r)
   }
   drunks.insert(0, drunk)
 
 if len(drunks) <= 0:
     exit()
+
 
 def store_last_tweet(drunks=[], last_tweetd_file=LAST_TWEET_FILE):
   with open(last_tweetd_file, 'w') as file:
