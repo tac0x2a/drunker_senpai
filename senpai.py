@@ -140,4 +140,4 @@ def write_csv(drunks=[], target_csv="sample.csv", is_append=True):
         writer.writerows(drunks)
 
 for file_name, parsed_tweets in filename_parsedtweets.items():
-  write_csv(parsed_tweets, file_name, is_append=False)
+  write_csv(parsed_tweets, file_name, is_append=True)
