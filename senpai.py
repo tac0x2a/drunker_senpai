@@ -43,8 +43,8 @@ TWEET_PERSER = {
   ]
 }
 
-def parse_tweets(tweets: list) -> dict[str, list]:
-  parsed_tweets: dict[str, list] = {}
+def parse_tweets(tweets: list) -> dict:
+  parsed_tweets: dict = {}
 
   for tweet in tweets:
     parsed_tweet = parse_tweet(tweet, TWEET_PERSER)
@@ -69,7 +69,7 @@ def parse_tweet(tweet, patterns: list) -> (str, dict):
 
   return None
 
-def match_tweet(lines: list[str], pattern_list: list[str]) -> dict[str, str]:
+def match_tweet(lines: list, pattern_list: list) -> dict:
   matches = {}
   if len(lines) != len(pattern_list):
     return None
@@ -92,7 +92,7 @@ def match_tweet(lines: list[str], pattern_list: list[str]) -> dict[str, str]:
   return matches
 
 
-def match_convert(matches: dict[str, str]) -> dict[str, str]:
+def match_convert(matches: dict) -> dict:
     res = {}
     for k, v in matches.items():
       if k.startswith('d_'):
